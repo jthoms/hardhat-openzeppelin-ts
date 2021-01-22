@@ -46,11 +46,16 @@ describe("MyToken", () => {
 
     describe("Transactions", async () => {
         it("Should transfer tokens between accounts", async () => {
-            await myToken.transfer(addr1.address, 50);
+            await expect(myToken.transfer(addr1.address, 50))
+                .to.emit(myToken, 'Transfer')
+                .withArgs(owner.address, addr1.address, 50);
+
             const addr1Balance = await myToken.balanceOf(addr1.address);
             expect(addr1Balance).to.equal(50);
 
-            await myToken.connect(addr1).transfer(addr2.address, 50);
+            await expect(myToken.connect(addr1).transfer(addr2.address, 50))
+                .to.emit(myToken, 'Transfer')
+                .withArgs(addr1.address, addr2.address, 50);
             const addr2Balance = await myToken.balanceOf(addr2.address);
             expect(addr2Balance).to.equal(50)
         });

@@ -7,3 +7,5 @@ coverage*
 .env
 .openzeppelin
 package-lock.json
+.vscode
+
