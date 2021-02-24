@@ -14,8 +14,10 @@ Based on:
 - [Typescript Solidity Dev Starter Kit](https://github.com/rhlsthrm/typescript-solidity-dev-starter-kit)
 - [Solidity Template](https://github.com/paulrberg/solidity-template)
 
-## Quick start
+## Node via nvm
+https://github.com/nvm-sh/nvm
 
+## Quick start
 ```sh
 git clone https://github.com/jthoms/hardhat-openzeppelin-ts.git
 cd hardhat-openzeppelin-ts
@@ -29,7 +31,7 @@ npx hardhat clean
 npx hardhat compile
 npx hardhat test
 
-npm hardhat coverage
+npx hardhat coverage
 ```
 ## Local test deployment and upgrade
 
